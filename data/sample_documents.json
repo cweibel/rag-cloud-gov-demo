@@ -1,0 +1,52 @@
+{
+  "documents": [
+    {
+      "content": "Cloud.gov is a Platform-as-a-Service (PaaS) based on Cloud Foundry, specifically designed for government work. It provides a secure, compliant, and scalable infrastructure for federal agencies to deploy and manage applications without worrying about the underlying infrastructure.",
+      "metadata": {
+        "source": "cloud.gov overview",
+        "category": "platform",
+        "date": "2024"
+      }
+    },
+    {
+      "content": "The aws-rds service broker allows applications on Cloud.gov to provision PostgreSQL databases with various extensions. The pgvector extension enables vector similarity search, making it perfect for AI applications that need semantic search capabilities.",
+      "metadata": {
+        "source": "service documentation",
+        "category": "database",
+        "date": "2024"
+      }
+    },
+    {
+      "content": "Retrieval-Augmented Generation (RAG) combines the power of large language models with domain-specific knowledge. RAG systems first retrieve relevant documents from a knowledge base, then use this context to generate accurate, grounded responses.",
+      "metadata": {
+        "source": "AI documentation",
+        "category": "rag",
+        "date": "2024"
+      }
+    },
+    {
+      "content": "Cloud Foundry uses buildpacks to transform deployed code into a slug that can run on a DEA (Droplet Execution Agent) or Diego Cell. Python buildpack automatically detects Python applications by the presence of a requirements.txt file.",
+      "metadata": {
+        "source": "cf documentation",
+        "category": "deployment",
+        "date": "2024"
+      }
+    },
+    {
+      "content": "Vector databases store data as high-dimensional vectors, which are mathematical representations of features or attributes. They enable similarity search by finding vectors that are 'close' to each other in the vector space.",
+      "metadata": {
+        "source": "vector db guide",
+        "category": "database",
+        "date": "2024"
+      }
+    },
+    {
+      "content": "VCAP_SERVICES is an environment variable provided by Cloud Foundry that contains connection details for all services bound to an application. Applications parse this JSON to get database credentials, S3 bucket info, and other service configurations.",
+      "metadata": {
+        "source": "cf environment",
+        "category": "configuration",
+        "date": "2024"
+      }
+    }
+  ]
+}

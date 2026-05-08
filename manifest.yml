@@ -1,0 +1,12 @@
+---
+applications:
+- name: rag-demo
+  memory: 4G
+  disk_quota: 7G
+  instances: 1
+  buildpacks:
+    - python_buildpack
+  services:
+    - my-rag-db
+  command: python app.py
+  timeout: 180 
