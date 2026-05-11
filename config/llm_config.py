@@ -14,7 +14,7 @@ class LLMConfig:
         # Model configurations for different providers
         self.model_configs = {
             LLMProvider.EMBEDDED.value: {
-                "model": "google/flan-t5-small",
+                "model": "google/flan-t5-base",
                 "requires_api_key": False
             },
             LLMProvider.ANTHROPIC.value: {

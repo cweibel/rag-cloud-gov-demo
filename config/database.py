@@ -42,14 +42,39 @@ def init_database():
             )
         ''')
         
-        # Create index for vector similarity search
-        cur.execute('''
-            CREATE INDEX IF NOT EXISTS documents_embedding_idx 
-            ON documents 
-            USING ivfflat (embedding vector_cosine_ops)
-            WITH (lists = 100)
-        ''')
+        # Don't create index immediately - wait for data
+        # Index will be created after first batch of documents
         
         conn.commit()
     conn.close()
     print("Database initialized successfully")
+
+def create_index_if_needed():
+    """Create vector index if it doesn't exist and we have enough data"""
+    conn = get_db_connection()
+    with conn.cursor() as cur:
+        # Check if index exists
+        cur.execute("""
+            SELECT COUNT(*) 
+            FROM pg_indexes 
+            WHERE tablename = 'documents' 
+            AND indexname = 'documents_embedding_idx'
+        """)
+        
+        if cur.fetchone()[0] == 0:
+            # Check document count
+            cur.execute("SELECT COUNT(*) FROM documents")
+            count = cur.fetchone()[0]
+            
+            if count >= 10:  # Only create index after we have some data
+                lists = min(30, max(10, int(count ** 0.5)))
+                cur.execute(f'''
+                    CREATE INDEX documents_embedding_idx 
+                    ON documents 
+                    USING ivfflat (embedding vector_cosine_ops)
+                    WITH (lists = {lists})
+                ''')
+                conn.commit()
+                print(f"Created vector index with lists={lists}")
+    
+    conn.close()

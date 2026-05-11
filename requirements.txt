@@ -6,5 +6,6 @@ transformers==4.36.0
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch==2.1.0+cpu
 numpy==1.24.3
+pyyaml==6.0.1
 #anthropic==0.18.0
 #openai==1.12.0

@@ -1,7 +1,7 @@
 ---
 applications:
 - name: rag-demo
-  memory: 4G
+  memory: 8G
   disk_quota: 7G
   instances: 1
   buildpacks:

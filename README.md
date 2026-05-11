@@ -162,7 +162,7 @@ Response:
       "similarity": 0.95
     }
   ],
-  "model": "google/flan-t5-small",
+  "model": "google/flan-t5-base",
   "provider": "embedded"
 }
 ```
