@@ -7,7 +7,7 @@ class EmbeddingService:
         print(f"Loading embedding model: {model_name}")
         self.model = SentenceTransformer(model_name)
         self.dimension = 384  # all-MiniLM-L6-v2 produces 384-dimensional embeddings
-    
+
     def encode(self, texts):
         """Encode texts into embeddings"""
         if isinstance(texts, str):

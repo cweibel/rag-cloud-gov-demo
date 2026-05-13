@@ -36,7 +36,7 @@ class RAGChain:
             device=-1  # CPU only for Cloud.gov
         )
         logger.info("Embedded language model loaded successfully")
-    
+
     def _init_anthropic(self):
         """Initialize Anthropic Claude client"""
         from anthropic import Anthropic

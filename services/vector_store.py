@@ -91,7 +91,7 @@ class VectorStore:
         finally:
             conn.close()
     
-    def search(self, query, k=5):
+    def search(self, query, k=3):
         """Search for similar documents using vector similarity"""
         # Generate query embedding
         query_embedding = self.embedding_service.encode_single(query)

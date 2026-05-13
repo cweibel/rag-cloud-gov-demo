@@ -162,7 +162,7 @@ Response:
       "similarity": 0.95
     }
   ],
-  "model": "google/flan-t5-base",
+  "model": "google/flan-t5-small",
   "provider": "embedded"
 }
 ```
@@ -244,7 +244,7 @@ self.generator = pipeline(
 
 Modify the number of documents retrieved in `services/rag_chain.py`:
 ```python
-relevant_docs = self.vector_store.search(question, k=5)  # Retrieve top 5
+relevant_docs = self.vector_store.search(question, k=10)  # Retrieve top 10
 ```
 
 ## Troubleshooting
